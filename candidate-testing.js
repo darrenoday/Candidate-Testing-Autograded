@@ -32,10 +32,11 @@ candidateAnswers.push(candidateAnswer);
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-console.log(`Your responses:${candidateAnswers}
-Correct responses:${correctAnswers}`);
-
+for (i=0; i < candidateAnswers.length; i++){
+console.log(`Question ${questions[i]}
+Your response:${candidateAnswers[i]}
+Correct responses:${correctAnswers[i]}`);
+}
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
