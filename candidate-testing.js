@@ -25,8 +25,8 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 for (i=0; i < questions.length; i++){
   candidateAnswer = input.question(questions[i]);
-candidateAnswers.push(candidateAnswer);
-}
+  candidateAnswers.push(candidateAnswer);
+  }
 }
 
 function gradeQuiz(candidateAnswers) {
@@ -37,12 +37,31 @@ console.log(`Question ${questions[i]}
 Your response:${candidateAnswers[i]}
 Correct responses:${correctAnswers[i]}`);
 }
+candidateAnswers = candidateAnswers.join().toLowerCase().split(",");
+correctAnswers = correctAnswers.join().toLowerCase().split(",");
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  total = 0 
+  for (i=0; i < questions.length ; i++){
+     
+    if (candidateAnswers[i] == correctAnswers[i]){
+    total += 1;
+    }
+ }
+    grade = ((total / questions.length ) * 100);
+ 
+    if (grade >= 80){
+console.log(`you passed with a score of ${grade}% `)
+}
+else {
+  console.log(`you failed with a score of ${grade}%`)
+}
 
+  
 
-  return grade;
+ return grade;
+ 
 }
 
 function runProgram() {
