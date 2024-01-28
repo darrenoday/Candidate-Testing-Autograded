@@ -37,6 +37,7 @@ console.log(`Question ${questions[i]}
 Your response:${candidateAnswers[i]}
 Correct responses:${correctAnswers[i]}`);
 }
+
 candidateAnswers = candidateAnswers.join().toLowerCase().split(",");
 correctAnswers = correctAnswers.join().toLowerCase().split(",");
 
@@ -48,15 +49,19 @@ correctAnswers = correctAnswers.join().toLowerCase().split(",");
     if (candidateAnswers[i] == correctAnswers[i]){
     total += 1;
     }
+
  }
     grade = ((total / questions.length ) * 100);
  
     if (grade >= 80){
-console.log(`you passed with a score of ${grade}% `)
-}
-else {
-  console.log(`you failed with a score of ${grade}%`)
-}
+
+      console.log(`you passed with a score of ${grade}% `)
+
+    } else {
+ 
+      console.log(`you failed with a score of ${grade}%`)
+
+    }
 
   
 
@@ -71,6 +76,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
+// random comment
 
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
